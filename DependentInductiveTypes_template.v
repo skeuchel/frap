@@ -531,7 +531,7 @@ Proof.
   rewrite IHs1; auto.
 Qed.
 
-Local Hint Rewrite <- minus_n_O.
+Local Hint Rewrite Nat.sub_0_r.
 
 Lemma substring_app_snd : forall s2 s1 n,
   length s1 = n

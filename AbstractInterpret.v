@@ -474,7 +474,6 @@ Proof.
 
   invert H0.
   eexists; propositional.
-  eauto.
   apply subsumeds_add; eauto.
 
   cases (absint_step s c1 (fun c => wrap (c;; c2))).

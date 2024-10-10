@@ -1294,7 +1294,6 @@ Proof.
 
   invert H0.
   eexists; propositional.
-  eauto.
   apply subsumeds_add; eauto.
 
   cases (absint_step s c1 (fun c => wrap (c;; c2))).
@@ -1760,7 +1759,7 @@ Definition interval_absint := {|
   Represents := interval_rep
 |}.
 
-Local Hint Resolve mult_le_compat : core. (* Theorem from Coq standard library *)
+Local Hint Resolve Nat.mul_le_mono : core. (* Theorem from Coq standard library *)
 
 (* When one interval implies another, and the first is possible, we can deduce
  * arithmetic relationships betwen their respective bounds. *)

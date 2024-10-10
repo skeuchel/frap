@@ -520,7 +520,7 @@ Proof.
   trivial.
 
   unfold compose.
-  eauto using le_trans.
+  eauto using Nat.le_trans.
 
   unfold dmap.
   cases x; trivial.

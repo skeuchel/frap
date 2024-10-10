@@ -667,7 +667,7 @@ Ltac robust_ring_simplify :=
   repeat match goal with
          | [ |- context[?X * ?Y] ] =>
            match goal with
-           | [ |- context[?Z * X] ] => rewrite (mult_comm Z X)
+           | [ |- context[?Z * X] ] => rewrite (Nat.mul_comm Z X)
            end
          end.
 

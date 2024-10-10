@@ -131,7 +131,7 @@ Section properties.
   Qed.
 End properties.
 
-Hint Resolve subseteq_refl subseteq_In : core.
+Global Hint Resolve subseteq_refl subseteq_In : core.
 
 (*Hint Rewrite union_constant.*)
 
@@ -366,8 +366,8 @@ Section setexpr.
   Proof.
     induction ns; simpl; intuition.
     case_eq (n =? a); simpl; intros.
-    apply beq_nat_true in H; auto.
-    apply beq_nat_false in H.
+    apply Nat.eqb_eq in H; auto.
+    apply Nat.eqb_neq in H.
     destruct (member n ns); intuition.
   Qed.
 
@@ -578,11 +578,11 @@ Ltac quote E env k :=
   end.
 
 Ltac sets_cbv := cbv beta iota zeta delta [interp_normal_form normalize_setexpr nth_default
-                                           setmerge Elements Other nth_error map dedup member beq_nat orb
+                                           setmerge Elements Other nth_error map dedup member Nat.eqb orb
                                            andb included].
 
 Ltac sets_cbv_in H := cbv beta iota zeta delta [interp_normal_form normalize_setexpr nth_default
-                                                                   setmerge Elements Other nth_error map dedup member beq_nat orb
+                                                                   setmerge Elements Other nth_error map dedup member Nat.eqb orb
                                                                    andb included] in H.
                      
 Ltac normalize_set :=

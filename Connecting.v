@@ -4,7 +4,7 @@
   * License: https://creativecommons.org/licenses/by-nc-nd/4.0/ *)
 
 Require Import Frap SepCancel ModelCheck Classes.Morphisms.
-Require Import Arith.Div2 Eqdep.
+Require Import Eqdep.
 
 (** * Some odds and ends from past chapters *)
 
@@ -56,7 +56,7 @@ Fixpoint mod2 (n : nat) : bool :=
 Fixpoint natToWord (sz n : nat) : word sz :=
   match sz with
     | O => WO
-    | S sz' => WS (mod2 n) (natToWord sz' (div2 n))
+    | S sz' => WS (mod2 n) (natToWord sz' (Nat.div2 n))
   end.
 
 Definition wzero {sz} := natToWord sz 0.

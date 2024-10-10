@@ -127,4 +127,4 @@ End trc.
 Notation "R ^*" := (trc R) (at level 0).
 Notation "*^ R" := (trcEnd R) (at level 0).
 
-Hint Constructors trc : core.
+Global Hint Constructors trc : core.
