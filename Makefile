@@ -13,7 +13,13 @@ coq: Makefile.coq
 	$(MAKE) -f Makefile.coq
 
 lib: Makefile.coq
-	$(MAKE) -f Makefile.coq Frap.vo AbstractInterpret.vo SepCancel.vo
+	$(MAKE) -f Makefile.coq Sets.vo Map.vo Relations.vo Var.vo Invariant.vo\
+		ModelCheck.vo FrapWithoutSets.vo Frap.vo Imp.vo AbstractInterpret.vo\
+		SepCancel.vo BasicSyntax.vo Polymorphism.vo DataAbstraction.vo\
+		Interpreters.vo FirstClassFunctions.vo RuleInduction.vo\
+		TransitionSystems.vo ModelChecking.vo OperationalSemantics.vo\
+		AbstractInterpretation.vo CompilerCorrectness.vo\
+		LambdaCalculusAndTypeSoundness.vo HoareLogic.vo SeparationLogic.vo
 
 Makefile.coq: Makefile _CoqProject *.v
 	coq_makefile -f _CoqProject -o Makefile.coq

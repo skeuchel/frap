@@ -12,7 +12,7 @@ if not exist "%coqc%" (
 )
 
 rem List of .v files. Add more files as needed
-set "coqFiles=Sets.v Map.v Relations.v Var.v Invariant.v ModelCheck.v FrapWithoutSets.v Frap.v Imp.v AbstractInterpret.v SepCancel.v"
+set "coqFiles=Sets.v Map.v Relations.v Var.v Invariant.v ModelCheck.v FrapWithoutSets.v Frap.v Imp.v AbstractInterpret.v SepCancel.v BasicSyntax.v Polymorphism.v DataAbstraction.v Interpreters.v FirstClassFunctions.v RuleInduction.v TransitionSystems.v ModelChecking.v OperationalSemantics.v AbstractInterpretation.v CompilerCorrectness.v LambdaCalculusAndTypeSoundness.v HoareLogic.v SeparationLogic.v"
 
 rem Compile each file
 for %%F in (%coqFiles%) do (
